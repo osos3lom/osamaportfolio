@@ -1,11 +1,12 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  i18n: {
-    locales: ["en", "ar"], // supported languages
-    defaultLocale: "en",   // default language
+  output: 'export',
+  trailingSlash: true,
+  images: {
+    unoptimized: true, // Required for static export
   },
-  // other config options can go here
+  // Remove i18n config - it's not compatible with App Router
 };
 
 export default nextConfig;
