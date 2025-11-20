@@ -47,8 +47,8 @@ This project highlights modern full-stack development techniques, showcasing my 
 Clone the project:
 
 ```bash
-git clone https://github.com/osos3lom/ososportfoilo.git
-cd ososportfolio
+git clone https://github.com/osos3lom/osamaportfolio.git
+cd osamaportfolio
 ```
 
 Install dependencies:
