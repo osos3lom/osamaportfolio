@@ -1,9 +1,11 @@
 "use client"
 
 import Link from "next/link"
+import Image from "next/image"
 import IonIcon from "@/components/IonIcon"
 import type { Locale } from "@/lib/i18n/config"
 import { dictionaries } from "@/lib/i18n/dictionaries"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 
 interface StoreSectionProps {
     lang: Locale
@@ -12,6 +14,75 @@ interface StoreSectionProps {
 export default function StoreSection({ lang }: StoreSectionProps) {
     const dict = dictionaries[lang]
 
+    const products = [
+        {
+            id: 1,
+            name: dict.store.digitalProducts.items[0],
+            category: "Templates",
+            price: "$49 - $199",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "Professional, responsive website templates ready to customize for your business needs."
+                    : "قوالب مواقع ويب احترافية ومستجيبة جاهزة للتخصيص حسب احتياجات عملك.",
+        },
+        {
+            id: 2,
+            name: dict.store.digitalProducts.items[1],
+            category: "Design Kits",
+            price: "$79 - $299",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "Complete UI/UX design systems with components, patterns, and guidelines."
+                    : "أنظمة تصميم UI/UX كاملة مع المكونات والأنماط والإرشادات.",
+        },
+        {
+            id: 3,
+            name: dict.store.digitalProducts.items[2],
+            category: "Mobile Apps",
+            price: "$99 - $399",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "Modern mobile app templates for iOS and Android with clean code architecture."
+                    : "قوالب تطبيقات موبايل حديثة لنظامي iOS و Android مع بنية كود نظيفة.",
+        },
+        {
+            id: 4,
+            name: dict.store.digitalProducts.items[3],
+            category: "Branding",
+            price: "$149 - $499",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "Complete brand identity packages including logo, colors, typography, and guidelines."
+                    : "حزم هوية تجارية كاملة تشمل الشعار والألوان والطباعة والإرشادات.",
+        },
+        {
+            id: 5,
+            name: dict.store.digitalProducts.items[4],
+            category: "Graphics",
+            price: "$29 - $99",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "High-quality icon sets and graphic elements for web and mobile projects."
+                    : "مجموعات أيقونات وعناصر رسومية عالية الجودة لمشاريع الويب والموبايل.",
+        },
+        {
+            id: 6,
+            name: lang === "en" ? "Custom Development" : "التطوير المخصص",
+            category: "Services",
+            price: lang === "en" ? "Custom Quote" : "عرض مخصص",
+            image: "/placeholder.svg?height=300&width=400",
+            description:
+                lang === "en"
+                    ? "Tailored web and mobile development services to match your exact requirements."
+                    : "خدمات تطوير ويب وموبايل مخصصة لتتناسب مع متطلباتك بالضبط.",
+        },
+    ]
+
     return (
         <article className="store active" data-page="store">
             <header>
@@ -19,48 +90,41 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             </header>
 
             <section className="store-cards">
-                <div className="store-cards-grid">
-                    {/* Digital Products Card */}
-                    <div className="store-card">
-                        <div className="store-card-icon">
-                            <IonIcon name="code-slash-outline" />
-                        </div>
-                        <h3 className="store-card-title">{dict.store.digitalProducts.title}</h3>
-                        <p className="store-card-description">{dict.store.digitalProducts.description}</p>
-                        <ul className="store-card-list">
-                            {dict.store.digitalProducts.items.map((item: string, index: number) => (
-                                <li key={index}>
-                                    <IonIcon name="checkmark-circle-outline" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <Link href={`/${lang}/products`} className="store-card-btn">
-                            <IonIcon name="cart-outline" />
-                            <span>{dict.store.viewProducts}</span>
-                        </Link>
-                    </div>
-
-                    {/* Services Card */}
-                    <div className="store-card">
-                        <div className="store-card-icon">
-                            <IonIcon name="briefcase-outline" />
-                        </div>
-                        <h3 className="store-card-title">{dict.store.services.title}</h3>
-                        <p className="store-card-description">{dict.store.services.description}</p>
-                        <ul className="store-card-list">
-                            {dict.store.services.items.map((item: string, index: number) => (
-                                <li key={index}>
-                                    <IonIcon name="checkmark-circle-outline" />
-                                    <span>{item}</span>
-                                </li>
-                            ))}
-                        </ul>
-                        <Link href={`/${lang}/quote`} className="store-card-btn">
-                            <IonIcon name="call-outline" />
-                            <span>{dict.store.getQuote}</span>
-                        </Link>
-                    </div>
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-7.5 space-y-7.5">
+                    {products.map((product) => (
+                        <Card key={product.id} className="store-card break-inside-avoid mb-7.5 bg-transparent border-none shadow-none p-0">
+                            <a href={`/${lang}/quote`} className="w-full block">
+                                <figure className="w-full h-[200px] rounded-xl overflow-hidden relative">
+                                    <Image
+                                        src={product.image || "/placeholder.svg"}
+                                        alt={product.name}
+                                        width={400}
+                                        height={300}
+                                        className="w-full h-full object-cover transition-transform duration-[var(--transition-1)] hover:scale-110"
+                                    />
+                                    <div className="absolute inset-0 bg-black/50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                                        <div className="bg-[var(--orange-yellow-crayola)] text-white p-2 rounded-full">
+                                            <IonIcon name="cart-outline" />
+                                        </div>
+                                    </div>
+                                </figure>
+                                <CardContent className="p-4 pl-0">
+                                    <p className="text-[var(--light-gray-70)] text-sm mb-1">{product.category}</p>
+                                    <CardTitle className="text-[var(--white-2)] capitalize text-lg mb-2">{product.name}</CardTitle>
+                                    <CardDescription className="text-[var(--light-gray)] text-sm line-clamp-2 mb-3">
+                                        {product.description}
+                                    </CardDescription>
+                                    <div className="flex justify-between items-center mt-auto">
+                                        <span className="text-[var(--orange-yellow-crayola)] font-medium">{product.price}</span>
+                                        <span className="text-[var(--light-gray-70)] text-sm flex items-center gap-1 group-hover:text-[var(--orange-yellow-crayola)]">
+                                            {lang === "en" ? "Get Quote" : "احصل على عرض"}
+                                            <IonIcon name="arrow-forward-outline" />
+                                        </span>
+                                    </div>
+                                </CardContent>
+                            </a>
+                        </Card>
+                    ))}
                 </div>
             </section>
         </article>

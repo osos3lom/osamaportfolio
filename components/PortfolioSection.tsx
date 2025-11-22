@@ -5,6 +5,7 @@ import IonIcon from "@/components/IonIcon"
 import type { PortfolioData } from "@/lib/portfolio-data"
 import type { Locale } from "@/lib/i18n/config"
 import { dictionaries } from "@/lib/i18n/dictionaries"
+import { Card, CardContent, CardDescription, CardTitle } from "@/components/ui/card"
 
 interface PortfolioSectionProps {
     data: PortfolioData
@@ -21,17 +22,17 @@ export default function PortfolioSection({ data, lang }: PortfolioSectionProps) 
             </header>
 
             <section>
-                <ul className="grid grid-cols-1 gap-7.5 mb-2.5">
+                <div className="columns-1 md:columns-2 lg:columns-3 gap-7.5 mb-2.5 space-y-7.5">
                     {data.portfolioProjects && data.portfolioProjects.length > 0 ? (
                         data.portfolioProjects.map((project) => (
-                            <li
+                            <Card
                                 key={project.id}
-                                className="project-item active"
+                                className="project-item active bg-transparent border-none shadow-none p-0 break-inside-avoid mb-7.5"
                                 data-filter-item
                                 data-category={project.category}
                             >
-                                <a href={project.projectUrl || "#"} className="w-full">
-                                    <figure className="project-img">
+                                <a href={project.projectUrl || "#"} className="w-full block">
+                                    <figure className="project-img relative overflow-hidden rounded-lg">
                                         <div className="project-item-icon-box">
                                             <IonIcon name="eye-outline" />
                                         </div>
@@ -40,19 +41,21 @@ export default function PortfolioSection({ data, lang }: PortfolioSectionProps) 
                                             alt={project.title}
                                             width={400}
                                             height={300}
-                                            className="project-img-element"
+                                            className="project-img-element w-full h-auto object-cover"
                                         />
                                     </figure>
-                                    <h3 className="project-title">{project.title}</h3>
-                                    <p className="project-category">{project.category}</p>
+                                    <CardContent className="p-4 pl-0">
+                                        <CardTitle className="project-title text-lg font-medium mb-1">{project.title}</CardTitle>
+                                        <CardDescription className="project-category text-sm text-muted-foreground">{project.category}</CardDescription>
+                                    </CardContent>
                                 </a>
-                            </li>
+                            </Card>
                         ))
                     ) : (
                         <>
-                            <li className="project-item active" data-filter-item data-category="web development">
-                                <a href="#" className="w-full">
-                                    <figure className="project-img">
+                            <Card className="project-item active bg-transparent border-none shadow-none p-0 break-inside-avoid mb-7.5" data-filter-item data-category="web development">
+                                <a href="#" className="w-full block">
+                                    <figure className="project-img relative overflow-hidden rounded-lg">
                                         <div className="project-item-icon-box">
                                             <IonIcon name="eye-outline" />
                                         </div>
@@ -61,16 +64,18 @@ export default function PortfolioSection({ data, lang }: PortfolioSectionProps) 
                                             alt="Finance"
                                             width={400}
                                             height={300}
-                                            className="project-img-element"
+                                            className="project-img-element w-full h-auto object-cover"
                                         />
                                     </figure>
-                                    <h3 className="project-title">Finance</h3>
-                                    <p className="project-category">Web development</p>
+                                    <CardContent className="p-4 pl-0">
+                                        <CardTitle className="project-title text-lg font-medium mb-1">Finance</CardTitle>
+                                        <CardDescription className="project-category text-sm text-muted-foreground">Web development</CardDescription>
+                                    </CardContent>
                                 </a>
-                            </li>
-                            <li className="project-item active" data-filter-item data-category="web development">
-                                <a href="#" className="w-full">
-                                    <figure className="project-img">
+                            </Card>
+                            <Card className="project-item active bg-transparent border-none shadow-none p-0 break-inside-avoid mb-7.5" data-filter-item data-category="web development">
+                                <a href="#" className="w-full block">
+                                    <figure className="project-img relative overflow-hidden rounded-lg">
                                         <div className="project-item-icon-box">
                                             <IonIcon name="eye-outline" />
                                         </div>
@@ -79,16 +84,18 @@ export default function PortfolioSection({ data, lang }: PortfolioSectionProps) 
                                             alt="Orizon"
                                             width={400}
                                             height={300}
-                                            className="project-img-element"
+                                            className="project-img-element w-full h-auto object-cover"
                                         />
                                     </figure>
-                                    <h3 className="project-title">Orizon</h3>
-                                    <p className="project-category">Web development</p>
+                                    <CardContent className="p-4 pl-0">
+                                        <CardTitle className="project-title text-lg font-medium mb-1">Orizon</CardTitle>
+                                        <CardDescription className="project-category text-sm text-muted-foreground">Web development</CardDescription>
+                                    </CardContent>
                                 </a>
-                            </li>
+                            </Card>
                         </>
                     )}
-                </ul>
+                </div>
             </section>
         </article>
     )
