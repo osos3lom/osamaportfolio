@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 
 // generateStaticParams remains synchronous
 export function generateStaticParams() {
-  return locales.map((lang) => ({ lang })); 
+  return locales.map((lang) => ({ lang }));
 }
 
 // Make the layout async and await params
@@ -39,7 +39,7 @@ export default async function RootLayout({
   const locale = lang as Locale;
 
   return (
-    <html className={`${inter.variable} ${jetbrainsMono.variable}`} lang={locale}>
+    <html className={`${inter.variable} ${jetbrainsMono.variable}`} lang={locale} dir={locale === "ar" ? "rtl" : "ltr"} suppressHydrationWarning>
       <body className="antialiased">
         {children}
         <Script

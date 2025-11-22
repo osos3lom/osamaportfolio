@@ -1,30 +1,13 @@
-// components/IonIcon.tsx
-import React from 'react';
+"use client"
+
+import React from "react"
 
 interface IonIconProps {
-  name: string;
-  className?: string;
-  size?: 'small' | 'large' | string;
-  color?: string;
-  mode?: 'ios' | 'md';
+    name: string
+    className?: string
 }
 
-const IonIcon = React.forwardRef<HTMLElement, IonIconProps>(
-  ({ name, className, size, color, mode }, ref) => {
-    const props: any = {
-      ref,
-      name,
-    };
-
-    if (className) props.class = className;
-    if (size) props.size = size;
-    if (color) props.color = color;
-    if (mode) props.mode = mode;
-
-    return React.createElement('ion-icon', props);
-  }
-);
-
-IonIcon.displayName = 'IonIcon';
-
-export default IonIcon;
+export default function IonIcon({ name, className }: IonIconProps) {
+    // @ts-ignore - ion-icon is a custom element defined by ionicons package
+    return <ion-icon name={name} class={className} />
+}
