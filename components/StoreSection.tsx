@@ -19,8 +19,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 1,
             name: dict.store.digitalProducts.items[0],
             category: "Templates",
-            price: "$49 - $199",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "190 – 750 SAR",
+            image: "/store/WebsiteTemplates.jpg",
             description:
                 lang === "en"
                     ? "Professional, responsive website templates ready to customize for your business needs."
@@ -30,8 +30,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 2,
             name: dict.store.digitalProducts.items[1],
             category: "Design Kits",
-            price: "$79 - $299",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "300 – 1,150 SAR",
+            image: "/store/UIUXDesignKits.jpg",
             description:
                 lang === "en"
                     ? "Complete UI/UX design systems with components, patterns, and guidelines."
@@ -41,8 +41,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 3,
             name: dict.store.digitalProducts.items[2],
             category: "Mobile Apps",
-            price: "$99 - $399",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "375 – 1,500 SAR",
+            image: "/store/MobileAppTemplates.jpg",
             description:
                 lang === "en"
                     ? "Modern mobile app templates for iOS and Android with clean code architecture."
@@ -52,8 +52,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 4,
             name: dict.store.digitalProducts.items[3],
             category: "Branding",
-            price: "$149 - $499",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "560 – 1,850 SAR",
+            image: "/store/BrandIdentityPackages.jpg",
             description:
                 lang === "en"
                     ? "Complete brand identity packages including logo, colors, typography, and guidelines."
@@ -63,8 +63,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 5,
             name: dict.store.digitalProducts.items[4],
             category: "Graphics",
-            price: "$29 - $99",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "110 – 375 SAR",
+            image: "/store/IconSets&Graphics.jpg",
             description:
                 lang === "en"
                     ? "High-quality icon sets and graphic elements for web and mobile projects."
@@ -74,8 +74,8 @@ export default function StoreSection({ lang }: StoreSectionProps) {
             id: 6,
             name: lang === "en" ? "Custom Development" : "التطوير المخصص",
             category: "Services",
-            price: lang === "en" ? "Custom Quote" : "عرض مخصص",
-            image: "/placeholder.svg?height=300&width=400",
+            price: "120 – 200 SAR/hour",
+            image: "/store/CustomDevelopment.jpg",
             description:
                 lang === "en"
                     ? "Tailored web and mobile development services to match your exact requirements."
