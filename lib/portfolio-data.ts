@@ -106,9 +106,9 @@ const portfolioDataEn: PortfolioData = {
     location: "Jeddah, Makkah, KSA",
     avatar: "/avatars/my-avatar.png",
     socialLinks: {
-      github: "https://github.com",
-      linkedin: "https://linkedin.com",
-      twitter: "https://twitter.com",
+      github: "https://github.com/osos3lom",
+      linkedin: "https://www.linkedin.com/in/osama-alam-ab424127a",
+      twitter: "https://x.com/osama3alm",
       instagram: "https://instagram.com",
     },
   },
