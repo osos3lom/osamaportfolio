@@ -62,6 +62,54 @@ export const dictionaries = {
         ],
       },
     },
+    hero: {
+      badge: "Premium Digital Products",
+      title: "Luxury Digital Templates for the AI Era",
+      subtitle: "High-performance templates, UI kits, and brand identity packages designed for modern startups, SaaS, and AI products.",
+      cta: "Get Quote",
+    },
+    features: {
+      title: "Why Choose Us",
+      aiOptimized: {
+        title: "AI-Optimized",
+        desc: "Built for modern AI tools and frameworks",
+      },
+      premiumQuality: {
+        title: "Premium Quality",
+        desc: "Professionally crafted with attention to detail",
+      },
+      readyToUse: {
+        title: "Ready to Use",
+        desc: "Deploy immediately with minimal configuration",
+      },
+    },
+    products: {
+      title: "Our Products",
+      learnMore: "Learn more",
+      viewDetails: "View Details",
+    },
+    footer: {
+      tagline: "Premium digital products for the AI era",
+      products: "Products",
+      more: "More",
+      getStarted: "Get Started",
+      copyright: "LUXE. All rights reserved.",
+    },
+    productPage: {
+      digitalProducts: "Available Digital Products",
+      digitalProductsDesc: "Choose from our carefully crafted products, each designed for specific use cases",
+      keyFeatures: "Key Features",
+      perfectFor: "Perfect For",
+      whatsIncluded: "What's Included",
+      readyToStart: "Ready to Get Started?",
+      readyToStartDesc: "Get a custom quote based on your specific needs and requirements.",
+    },
+    common: {
+      getQuote: "Get Quote",
+      sar: "SAR",
+      from: "From",
+      to: "to",
+    },
   },
   ar: {
     nav: {
@@ -125,8 +173,56 @@ export const dictionaries = {
           "الاستشارات والتدريب",
         ],
       },
+    }, // Fixed missing brace here
+    hero: {
+      badge: "منتجات رقمية فاخرة",
+      title: "قوالب رقمية فاخرة لعصر الذكاء الاصطناعي",
+      subtitle: "قوالب عالية الأداء ومجموعات تصميم وحزم هوية تجارية مصممة للشركات الناشئة الحديثة ومنتجات SaaS والذكاء الاصطناعي.",
+      cta: "احصل على عرض",
+    },
+    features: {
+      title: "لماذا تختارنا",
+      aiOptimized: {
+        title: "محسّن للذكاء الاصطناعي",
+        desc: "مبني لأدوات وأطر الذكاء الاصطناعي الحديثة",
+      },
+      premiumQuality: {
+        title: "جودة فاخرة",
+        desc: "مصنوع بشكل احترافي مع الاهتمام بالتفاصيل",
+      },
+      readyToUse: {
+        title: "جاهز للاستخدام",
+        desc: "انشر فورًا بأقل قدر من الإعدادات",
+      },
+    },
+    products: {
+      title: "منتجاتنا",
+      learnMore: "اعرف المزيد",
+      viewDetails: "عرض التفاصيل",
+    },
+    footer: {
+      tagline: "منتجات رقمية فاخرة لعصر الذكاء الاصطناعي",
+      products: "المنتجات",
+      more: "المزيد",
+      getStarted: "ابدأ الآن",
+      copyright: "لوكس. جميع الحقوق محفوظة.",
+    },
+    productPage: {
+      digitalProducts: "المنتجات الرقمية المتاحة",
+      digitalProductsDesc: "اختر من منتجاتنا المصممة بعناية، كل منها مصمم لحالات استخدام محددة",
+      keyFeatures: "الميزات الرئيسية",
+      perfectFor: "مثالي لـ",
+      whatsIncluded: "ما يتضمنه",
+      readyToStart: "هل أنت مستعد للبدء؟",
+      readyToStartDesc: "احصل على عرض مخصص بناءً على احتياجاتك ومتطلباتك المحددة.",
+    },
+    common: {
+      getQuote: "احصل على عرض",
+      sar: "ريال",
+      from: "من",
+      to: "إلى",
     },
   },
-} as const
+} as const;
 
-export type Dictionary = typeof dictionaries.en
+export type Dictionary = typeof dictionaries.en;
