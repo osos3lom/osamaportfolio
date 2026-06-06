@@ -12,7 +12,7 @@ This project highlights modern full-stack development techniques, showcasing my 
 
 🔗 Live Demo
 
-👉 Live App: [https://www.osamamaalam.com/](https://www.osamamaalam.com/)
+👉 Live App: [https://osamaportfolio-peach.vercel.app/en/](https://osamaportfolio-peach.vercel.app/en/)
 
 
 
